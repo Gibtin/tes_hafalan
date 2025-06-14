@@ -108,7 +108,20 @@ function nextQuestion() {
     nextBtn.style.display = "none";
 
     // Simpan skor ke localStorage
-    localStorage.setItem("skor_" + userName, score * 10);
+    fetch("https://script.google.com/macros/s/AKfycbzp_mSWyv-1Ruwo4oi7gDbWV72cpVF246pk0-xxfZ0/exec", {
+    method: "POST",
+    body: JSON.stringify({
+        nama: userName,
+        skor: score * 10
+    }),
+    headers: {
+        "Content-Type": "application/json"
+    }
+})
+.then(res => res.json())
+.then(data => console.log("Berhasil kirim:", data))
+.catch(err => console.error("Gagal kirim:", err));
+
 }
 }
 showQuestion();
