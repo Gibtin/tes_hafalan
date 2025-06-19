@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soal Hafalan</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <main>
+  <div id="start-screen">
+    <h3>Masukkan Nama:</h3>
+    <input type="text" id="namaInput" placeholder="Nama kamu" />
+    <button onclick="mulaiGame()">Mulai</button>
+  </div>
+
+  <div class="container" style="display: none;">
+    <h2 id="soal">Soal</h2>
+    <div id="pilihan"></div>
+    <p id="hasil"></p>
+    <button id="next" onclick="nextQuestion()">Next</button>
+  </div>
+</main>
+
+ <script>
+  const params = new URLSearchParams(window.location.search);
+  const juz = params.get("juz");
+  const script = document.createElement("script");
+  script.src = `data/juz${juz}.js`; // misalnya data/juz22.js
+  document.body.appendChild(script);
+</script>
+
+<script src="../script.js"></script>
+  
+</body>
+</html>
