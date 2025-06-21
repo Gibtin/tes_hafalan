@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pilih Juz</title>
-  <link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juz 23</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="juz-container">
-    <h2>Pilih Juz yang Ingin Diuji</h2>
-    <div class="juz-grid" id="juzGrid"></div>
-  </div>
 
-  <script>
-    const grid = document.getElementById("juzGrid");
-    for (let i = 1; i <= 30; i++) {
-      const a = document.createElement("a");
-      a.href = `soal.html?juz=${i}`;
-      a.textContent = `Juz ${i}`;
-      grid.appendChild(a);
-    }
-  </script>
+<div id="start-screen">
+  <h4>Assalamu'alaikum <br> Ahlan wa sahlan. <br><br> Sebelum tes hafalan juz 23 silahkan masukkan nama</h4>
+  <div class="form-box">
+  <input type="text" id="namaInput" placeholder="Nama kamu">
+  <button onclick="mulaiGame()">Mulai</button>
+  </div>
+</div>
+
+<div class="container" style="display: none;">
+    <h2 id="soal">Pertanyaan muncul di sini</h2>
+    <div id="pilihan"></div>
+    <p id="hasil"></p>
+    <button id="next" onclick="nextQuestion()">Next</button>
+  </div>
+    <script src="script.js"></script>
 </body>
 </html>
